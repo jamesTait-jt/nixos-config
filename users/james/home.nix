@@ -10,7 +10,8 @@
 		enable = true;
 		
 		extraConfig = {
-			init.defaultBranch = "trunk";
+			init.defaultBranch = "main";
+			pull.rebase = "true";
 			user = {
 				name = "James Tait";
 				email = "jamesatait12@gmail.com";
