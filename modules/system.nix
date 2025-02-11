@@ -7,7 +7,7 @@
   users.users.${username} = {
     isNormalUser = true;
     description = username;
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel" "networkmanager"];
   };
 
   nix.settings = {
