@@ -3,12 +3,13 @@ normal.family = "JetBrains Mono Nerd Font"
 bold.family = "JetBrains Mono Nerd Font"
 italic.family = "JetBrains Mono Nerd Font"
 bold_italic.family = "JetBrains Mono Nerd Font"
-
 size = 11.0
 
 [window]
-opacity = 0.9
+opacity = 0.95
 decorations = "none"
+padding.x = 10
+padding.y = 10
 
 # Everforest Dark Hard Color Scheme
 [colors]

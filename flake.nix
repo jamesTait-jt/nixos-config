@@ -9,15 +9,16 @@
 		home-manager.url = "github:nix-community/home-manager/release-24.11";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-		# wezterm
-		#wezterm.url = "github:wez/wezterm?dir=nix";
+		# nvf
+		nvf.url = "github:notashelf/nvf";
+		nvf.inputs.nixpkgs.follows = "nixpkgs";
 	};
 
 	outputs = inputs @ { 
 		self,
 		nixpkgs,
 		home-manager,
-		#hyprland,
+		nvf,
 		...
 	}: {
 		nixosConfigurations = {
