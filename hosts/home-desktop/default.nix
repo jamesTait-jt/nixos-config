@@ -5,20 +5,21 @@
 }: {
   imports = [
     ../../modules/system.nix
+    ../../modules/nvidia.nix
     ../../modules/i3.nix
     ../../modules/wifi.nix
 
     ./hardware-configuration.nix
   ];
 
-  # bootloader
+  # Bootloader
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
     grub.device = "nodev";
   };
 
-  # define hostname
+  # Define hostname
   networking.hostName = "home-desktop";
 
   # This option defines the first version of NixOS you have installed on this particular machine,
