@@ -6,7 +6,8 @@
   imports = [
     ../../modules/system.nix
     ../../modules/nvidia.nix
-    ../../modules/i3.nix
+    #../../modules/i3.nix
+    ../../modules/hyprland.nix
     ../../modules/wifi.nix
 
     ./hardware-configuration.nix
@@ -21,6 +22,9 @@
 
   # Define hostname
   networking.hostName = "home-desktop";
+
+  # Enable hyprland
+  programs.hyprland.enable = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

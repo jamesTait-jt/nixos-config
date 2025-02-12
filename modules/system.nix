@@ -28,9 +28,6 @@
   # Set timezone
   time.timeZone = "Europe/London";
 
-  # Configure keymap in X11
-  services.xserver.xkb.layout = "gb";
-
   fonts = {
     packages = with pkgs; [
       # Icon fonts
@@ -64,6 +61,7 @@
     wget
     gcc
     xclip
+    autorandr
   ];
   environment.variables.EDITOR = "vim";
 

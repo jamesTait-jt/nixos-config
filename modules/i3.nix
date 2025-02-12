@@ -21,7 +21,6 @@
         feh
       ];
     };
-
     xkb.layout = "gb";
   };
 }

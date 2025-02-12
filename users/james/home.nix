@@ -7,7 +7,8 @@
     ../../home/core.nix
 
     ../../home/nvim
-    ../../home/i3
+    #../../home/i3
+    ../../home/hyprland
     ../../home/shell
     ../../home/browser
 
