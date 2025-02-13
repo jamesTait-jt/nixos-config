@@ -6,6 +6,7 @@
   imports = [
     ./hyprpaper.nix
     ./waybar.nix
+    ./swaync.nix
   ];
 
   services.cliphist.enable = true;
@@ -37,12 +38,38 @@
         "$mod SHIFT, j, movewindow, d"
         "$mod SHIFT, k, movewindow, u"
         "$mod SHIFT, l, movewindow, r"
+
+        # Workspace navigation
+        "$mod, 1, workspace, 1"
+        "$mod, 2, workspace, 2"
+        "$mod, 3, workspace, 3"
+        "$mod, 4, workspace, 4"
+        "$mod, 5, workspace, 5"
+        "$mod, 6, workspace, 6"
+        "$mod, 7, workspace, 7"
+        "$mod, 8, workspace, 8"
+        "$mod, 9, workspace, 9"
+        "$mod, 0, workspace, 0"
       ];
     };
 
     extraConfig = ''
       monitor = HDMI-A-1, 1920x1080@144, 0x0, 1
       monitor = DVI-D-1, 1920x1080, 1920x0, 1
+
+      # Centre monitor
+      workspace = 1, monitor:HDMI-A-1
+      workspace = 2, monitor:HDMI-A-1
+      workspace = 3, monitor:HDMI-A-1
+      workspace = 4, monitor:HDMI-A-1
+      workspace = 5, monitor:HDMI-A-1
+
+      # Right hand monitor
+      workspace = 6, monitor:DVI-D-1
+      workspace = 7, monitor:DVI-D-1
+      workspace = 8, monitor:DVI-D-1
+      workspace = 9, monitor:DVI-D-1
+      workspace = 0, monitor:DVI-D-1
     '';
   };
 }
