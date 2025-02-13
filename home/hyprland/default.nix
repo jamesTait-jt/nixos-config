@@ -19,6 +19,7 @@
     settings = {
       "$mod" = "ALT";
       "$terminal" = "alacritty";
+      "$browser" = "brave";
 
       input = {
         kb_layout = "gb";
@@ -26,7 +27,7 @@
 
       bind = [
         "$mod, Return, exec, $terminal"
-        "$mod SHIFT, Return, exec, brave"
+        "$mod SHIFT, Return, exec, $browser"
 
         # Window navigation
         "$mod SHIFT, Q, killactive"
