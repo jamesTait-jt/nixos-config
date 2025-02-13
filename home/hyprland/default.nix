@@ -3,10 +3,16 @@
   lib,
   ...
 }: {
-  programs.kitty.enable = true;
+  imports = [
+    ./hyprpaper.nix
+    ./waybar.nix
+  ];
+
+  services.cliphist.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
+
     settings = {
       "$mod" = "ALT";
       "$terminal" = "alacritty";
@@ -21,6 +27,7 @@
 
         # Window navigation
         "$mod SHIFT, Q, killactive"
+        "$mod, f, fullscreen, 1"
         "$mod, h, movefocus, l"
         "$mod, j, movefocus, d"
         "$mod, k, movefocus, u"

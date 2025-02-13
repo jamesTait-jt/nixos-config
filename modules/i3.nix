@@ -17,10 +17,9 @@
         i3lock
         # Compositor for transparent background
         picom
-        #Sets wallpaper
-        feh
       ];
     };
+
     xkb.layout = "gb";
   };
 }

@@ -9,6 +9,8 @@
     #../../modules/i3.nix
     ../../modules/hyprland.nix
     ../../modules/wifi.nix
+    ../../modules/sound.nix
+    ../../modules/bluetooth.nix
 
     ./hardware-configuration.nix
   ];

@@ -11,6 +11,7 @@
     ../../home/hyprland
     ../../home/shell
     ../../home/browser
+    ../../home/feh.nix
 
     nvf.homeManagerModules.default
   ];
