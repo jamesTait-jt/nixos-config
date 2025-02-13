@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{monitors, ...}: {
   programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -9,8 +9,8 @@
         position = "top";
         height = 30;
         output = [
-          "HDMI-A-1"
-          "DVI-D-1"
+          monitors.wayland.centre.name
+          monitors.wayland.right.name
         ];
 
         modules-left = ["hyprland/workspaces" "hyprland/mode"];
