@@ -52,7 +52,8 @@
         };
       home-desktop = let
         username = "james";
-        specialArgs = {inherit username;};
+        monitors = import ./hosts/home-desktop/monitor-names.nix;
+        specialArgs = {inherit username monitors;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;

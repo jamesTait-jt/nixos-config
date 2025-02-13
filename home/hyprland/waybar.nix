@@ -13,21 +13,14 @@
           "DVI-D-1"
         ];
 
-        modules-left = ["sway/workspaces" "sway/mode" "wlr/taskbar"];
-        modules-center = ["sway/window" "custom/hello-from-waybar"];
-        modules-right = ["mpd" "custom/mymodule#with-css-id" "temperature"];
+        modules-left = ["hyprland/workspaces" "hyprland/mode"];
+        #modules-center = ["clock"];
+        #modules-right = ["mpd"];
 
-        "sway/workspaces" = {
+        "hyprland/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
-        };
-        "custom/hello-from-waybar" = {
-          format = "hello {}";
-          max-length = 40;
-          interval = "once";
-          exec = pkgs.writeShellScript "hello-from-waybar" ''
-            echo "from within waybar"
-          '';
+          persistent-workspaces = [1 2 3 4 5 6 7 8 9];
         };
       };
     };

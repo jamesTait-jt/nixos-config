@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  monitors,
   ...
 }: {
   imports = [
@@ -71,22 +72,22 @@
     };
 
     extraConfig = ''
-      monitor = HDMI-A-1, 1920x1080@144, 0x0, 1
-      monitor = DVI-D-1, 1920x1080, 1920x0, 1
+      monitor = ${monitors.wayland.centre.name}, 1920x1080@144, 0x0, 1
+      monitor = ${monitors.wayland.right.name}, 1920x1080, 1920x0, 1
 
       # Centre monitor
-      workspace = 1, monitor:HDMI-A-1
-      workspace = 2, monitor:HDMI-A-1
-      workspace = 3, monitor:HDMI-A-1
-      workspace = 4, monitor:HDMI-A-1
-      workspace = 5, monitor:HDMI-A-1
+      workspace = 1, monitor:${monitors.wayland.centre.name}
+      workspace = 2, monitor:${monitors.wayland.centre.name}
+      workspace = 3, monitor:${monitors.wayland.centre.name}
+      workspace = 4, monitor:${monitors.wayland.centre.name}
+      workspace = 5, monitor:${monitors.wayland.centre.name}
 
       # Right hand monitor
-      workspace = 6, monitor:DVI-D-1
-      workspace = 7, monitor:DVI-D-1
-      workspace = 8, monitor:DVI-D-1
-      workspace = 9, monitor:DVI-D-1
-      workspace = 0, monitor:DVI-D-1
+      workspace = 6, monitor:${monitors.wayland.right.name}
+      workspace = 7, monitor:${monitors.wayland.right.name}
+      workspace = 8, monitor:${monitors.wayland.right.name}
+      workspace = 9, monitor:${monitors.wayland.right.name}
+      workspace = 0, monitor:${monitors.wayland.right.name}
     '';
   };
 }
