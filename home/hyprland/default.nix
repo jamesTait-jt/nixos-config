@@ -3,7 +3,10 @@
   lib,
   monitors,
   ...
-}: {
+}: let 
+  centre = monitors.wayland.centre;
+  right = monitors.wayland.right;
+in {
   imports = [
     ./hyprpaper.nix
     ./hyprlock.nix
@@ -72,22 +75,22 @@
     };
 
     extraConfig = ''
-      monitor = ${monitors.wayland.centre.name}, 1920x1080@144, 0x0, 1
-      monitor = ${monitors.wayland.right.name}, 1920x1080, 1920x0, 1
+      monitor = ${centre.name}, ${centre.resolution}@${centre.rate}, 0x0, 1
+      monitor = ${right.name}, ${right.resolution}, 1920x0, 1
 
       # Centre monitor
-      workspace = 1, monitor:${monitors.wayland.centre.name}
-      workspace = 2, monitor:${monitors.wayland.centre.name}
-      workspace = 3, monitor:${monitors.wayland.centre.name}
-      workspace = 4, monitor:${monitors.wayland.centre.name}
-      workspace = 5, monitor:${monitors.wayland.centre.name}
+      workspace = 1, monitor:${centre.name}
+      workspace = 2, monitor:${centre.name}
+      workspace = 3, monitor:${centre.name}
+      workspace = 4, monitor:${centre.name}
+      workspace = 5, monitor:${centre.name}
 
       # Right hand monitor
-      workspace = 6, monitor:${monitors.wayland.right.name}
-      workspace = 7, monitor:${monitors.wayland.right.name}
-      workspace = 8, monitor:${monitors.wayland.right.name}
-      workspace = 9, monitor:${monitors.wayland.right.name}
-      workspace = 0, monitor:${monitors.wayland.right.name}
+      workspace = 6, monitor:${right.name}
+      workspace = 7, monitor:${right.name}
+      workspace = 8, monitor:${right.name}
+      workspace = 9, monitor:${right.name}
+      workspace = 0, monitor:${right.name}
     '';
   };
 }
