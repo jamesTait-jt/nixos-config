@@ -9,6 +9,7 @@
     ./hypridle.nix
     ./waybar.nix
     ./swaync.nix
+    ./wofi.nix
   ];
 
   services.cliphist.enable = true;
@@ -20,6 +21,7 @@
       "$mod" = "ALT";
       "$terminal" = "alacritty";
       "$browser" = "brave";
+      "$menu" = "wofi --show drun";
 
       input = {
         kb_layout = "gb";
@@ -28,6 +30,7 @@
       bind = [
         "$mod, Return, exec, $terminal"
         "$mod SHIFT, Return, exec, $browser"
+        "$mod, space, exec, $menu"
 
         # Window navigation
         "$mod SHIFT, Q, killactive"
