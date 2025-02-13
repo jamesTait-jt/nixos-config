@@ -5,9 +5,10 @@
 }: {
   imports = [
     ./hyprpaper.nix
+    ./hyprlock.nix
+    ./hypridle.nix
     ./waybar.nix
     ./swaync.nix
-    ./hyprlock.nix
   ];
 
   services.cliphist.enable = true;
