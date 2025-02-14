@@ -6,7 +6,7 @@ bold_italic.family = "JetBrains Mono Nerd Font"
 size = 11.0
 
 [window]
-opacity = 0.95
+opacity = 0.90
 decorations = "none"
 padding.x = 10
 padding.y = 10

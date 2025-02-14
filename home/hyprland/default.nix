@@ -73,6 +73,13 @@ in {
         "$mod SHIFT, 9, movetoworkspacesilent, 9"
         "$mod SHIFT, 0, movetoworkspacesilent, 0"
       ];
+
+      decoration = {
+        rounding = 10;
+        blur = {
+          enabled = true;
+        };
+      };
     };
 
     extraConfig = ''
