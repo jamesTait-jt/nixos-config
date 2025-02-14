@@ -3,7 +3,7 @@
   lib,
   monitors,
   ...
-}: let 
+}: let
   centre = monitors.wayland.centre;
   right = monitors.wayland.right;
 in {
@@ -29,6 +29,7 @@ in {
 
       input = {
         kb_layout = "gb";
+        kb_options = "ctrl:swapcaps";
       };
 
       bind = [
