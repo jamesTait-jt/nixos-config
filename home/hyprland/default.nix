@@ -40,7 +40,7 @@ in {
 
         # Window navigation
         "$mod SHIFT, Q, killactive"
-        "$mod, f, fullscreen, 1"
+        "$mod, f, fullscreen, 0"
         "$mod, h, movefocus, l"
         "$mod, j, movefocus, d"
         "$mod, k, movefocus, u"
