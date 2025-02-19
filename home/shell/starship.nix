@@ -11,9 +11,11 @@
         "$os"
         "$directory"
         "$git_branch"
+        "$fill"
         "$nodejs"
         "$python"
         "$cmd_duration"
+        "$username"
         "$line_break"
         "$character"
       ];
@@ -23,9 +25,9 @@
       palettes.selected = {
         foreground = colours.fg;
         background = colours.bg0;
-        current_line = colours.bg2;
+        current_line = colours.bg4;
         primary = "#2c2a2e";
-        box = colours.bg2;
+        box = colours.bg3;
         blue = colours.blue;
         cyan = colours.aqua;
         green = colours.green;
@@ -98,9 +100,19 @@
         symbol = " python";
       };
 
+      fill = {
+        symbol = "─";
+        style = "fg:current_line";
+      };
+
       cmd_duration = {
         min_time = 500;
         format = "[─](fg:current_line)[](fg:orange)[ ](fg:primary bg:orange)[](fg:orange bg:box)[ $duration ](fg:foreground bg:box)[](fg:box)";
+      };
+
+      username = {
+        format = "[─](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $user](fg:foreground bg:box)[](fg:box)";
+        show_always = true;
       };
     };
   };
