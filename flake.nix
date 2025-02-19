@@ -52,8 +52,13 @@
         };
       home-desktop = let
         username = "james";
+
+        #theme = "tokyo-night";
+        theme = "everforest";
+
         monitors = import ./hosts/home-desktop/monitor-names.nix;
-        specialArgs = {inherit username monitors;};
+        colours = import ./themes/${theme}.nix;
+        specialArgs = {inherit username monitors colours;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;

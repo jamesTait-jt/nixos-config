@@ -1,12 +1,13 @@
 {
-	imports = [
-		./terminals.nix
-		./zsh/default.nix
-	];
+  imports = [
+    ./terminals.nix
+    ./starship.nix
+    ./zsh/default.nix
+  ];
 
-	home.sessionVariables = {
-		# Set default apps
-		EDITOR = "vim";
-		TERMINAL = "alacritty";
-	};
+  home.sessionVariables = {
+    # Set default apps
+    EDITOR = "vim";
+    TERMINAL = "alacritty";
+  };
 }
