@@ -2,6 +2,7 @@
   pkgs,
   lib,
   monitors,
+  colours,
   ...
 }: let
   centre = monitors.wayland.centre;
@@ -74,8 +75,15 @@ in {
         "$mod SHIFT, 0, movetoworkspacesilent, 0"
       ];
 
+      general = {
+        gaps_in = 3;
+        gaps_out = 7;
+        border_size = 1;
+        "col.active_border" = "rgba(${lib.strings.removePrefix "#" colours.green}ee)";
+      };
+
       decoration = {
-        rounding = 10;
+        rounding = 5;
         blur = {
           enabled = true;
         };
