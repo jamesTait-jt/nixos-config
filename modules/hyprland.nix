@@ -1,4 +1,8 @@
-{pkgs, rose-pine-hyprcursor, ...}: {
+{
+  pkgs,
+  rose-pine-hyprcursor,
+  ...
+}: {
   # Enable hyprland
   programs.hyprland = {
     enable = true;
