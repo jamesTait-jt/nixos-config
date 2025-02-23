@@ -146,9 +146,29 @@
           everforest = {
             package = everforest;
             setup = ''
-              vim.g.enable_italic = true;
-              vim.g.everforest_transparent_background = 1;
-              vim.cmd.colorscheme("everforest");
+              vim.g.enable_italic = true
+              vim.g.everforest_transparent_background = 1
+              vim.cmd.colorscheme("everforest")
+            '';
+          };
+
+          telescope-nvim = {
+            package = telescope-nvim;
+            setup = ''
+              local telescope = require("telescope")
+              local actions = require("telescope.actions")
+
+              telescope.setup({
+                defaults = {
+                  mappings = {
+                    i = {
+                      ["<C-k>"] = actions.move_selection_previous,
+                      ["<C-j>"] = actions.move_selection_next,
+                      ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+                    }
+                  }
+                }
+              })
             '';
           };
         };
