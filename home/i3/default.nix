@@ -1,6 +1,6 @@
 {
   home.file.".config/i3/config".source = ./config;
-  home.file.".config/i3/wallpaper.png".source = ../../wallpaper.png;
+  home.file.".config/i3/wallpaper.png".source = ../../wallpapers/forest-stairs.png;
 
   services.picom = {
     enable = true;
