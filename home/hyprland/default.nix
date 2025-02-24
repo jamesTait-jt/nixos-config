@@ -3,6 +3,7 @@
   lib,
   monitors,
   colours,
+  username,
   ...
 }: let
   centre = monitors.wayland.centre;
@@ -27,6 +28,7 @@ in {
       "$terminal" = "alacritty";
       "$browser" = "brave";
       "$menu" = "wofi --show drun";
+      "$screenshot" = "hyprshot -o /home/${username}/Photos/Screenshots";
 
       input = {
         kb_layout = "gb";
@@ -39,9 +41,9 @@ in {
         "$mod, space, exec, $menu"
 
         # Screenshots
-        ", PRINT, exec, hyprshot -m output"
-        "$mod, PRINT, exec, hyprshot -m window"
-        "$mod SHIFT, PRINT, exec, hyprshot -m region"
+        ", PRINT, exec, $screenshot -m output"
+        "$mod, PRINT, exec, $screenshot -m window"
+        "$mod SHIFT, PRINT, exec, $screenshot -m region"
 
         # Volume controls
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
