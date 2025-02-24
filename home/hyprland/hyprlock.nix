@@ -1,37 +1,40 @@
-{
+{colours, ...}: {
   programs.hyprlock = {
     enable = true;
     settings = {
       general = {
         disable_loading_bar = true;
-        grace = 300;
         hide_cursor = true;
-        no_fade_in = false;
       };
 
       background = [
         {
-          path = "screenshot";
-          blur_passes = 3;
-          blur_size = 8;
+          path = "${../../wallpapers/forest-stairs.png}";
+          blur_passes = 2;
         }
       ];
 
       input-field = [
         {
           size = "200, 50";
-          position = "0, -80";
-          monitor = "";
+          position = "0, -35";
+          outline_thickness = 4;
+          dots_size = 0.2;
+          dots_spacing = 0.2;
           dots_center = true;
+          outer_color = colours.rgb.green;
+          inner_color = colours.rgb.bg0;
+          font_color = colours.rgb.fg;
+          check_color = colours.rgb.green;
+          fail_color = colours.rgb.red;
+          capslock_color = colours.rgb.purple;
           fade_on_empty = false;
-          font_color = "rgb(202, 211, 245)";
-          inner_color = "rgb(91, 96, 120)";
-          outer_color = "rgb(24, 25, 38)";
-          outline_thickness = 5;
           placeholder_text = ''
-            <span foreground="##cad3f5">Password...</span>
+            <span foreground="#${colours.fg}">Password...</span>
           '';
-          shadow_passes = 2;
+          hide_input = false;
+          halign = "center";
+          valign = "center";
         }
       ];
     };
