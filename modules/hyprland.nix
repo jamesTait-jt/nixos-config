@@ -22,6 +22,9 @@
     # Enable monitor orientation in sddm
     # xorg.xrandr
 
+    # screenshots
+    hyprshot
+
     # Theme for sddm
     (catppuccin-sddm.override
       {

@@ -38,6 +38,11 @@ in {
         "$mod SHIFT, Return, exec, $browser"
         "$mod, space, exec, $menu"
 
+        # Screenshots
+        ", PRINT, exec, hyprshot -m output"
+        "$mod, PRINT, exec, hyprshot -m window"
+        "$mod SHIFT, PRINT, exec, hyprshot -m region"
+
         # Volume controls
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ", XF86AudioRaiseVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+"
