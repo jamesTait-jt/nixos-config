@@ -47,6 +47,7 @@
           exec = ''
             spotify_player get key playback | jq -r '"  \(.item.artists[0].name) - \(.item.name)"'
           '';
+          on-click = "spotify_player playback play-pause";
         };
 
         "clock#time" = {
