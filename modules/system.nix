@@ -62,6 +62,7 @@
     gcc
     xclip
     autorandr
+    jq
   ];
   environment.variables.EDITOR = "vim";
 

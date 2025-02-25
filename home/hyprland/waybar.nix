@@ -17,6 +17,7 @@
         ];
 
         modules-left = ["hyprland/workspaces" "hyprland/mode"];
+        modules-center = ["custom/spotify"];
         modules-right = [
           "network"
           "memory"
@@ -39,6 +40,13 @@
             active = "";
             default = "";
           };
+        };
+
+        "custom/spotify" = {
+          interval = 2;
+          exec = ''
+            spotify_player get key playback | jq -r '"  \(.item.artists[0].name) - \(.item.name)"'
+          '';
         };
 
         "clock#time" = {
@@ -119,7 +127,6 @@
       }
 
       #workspaces button {
-        /* To compensate for the top border and still have vertical centering */
         padding-right: 5px;
         color: ${colours.fg};
       }
@@ -133,6 +140,12 @@
       #workspaces button.urgent {
           border-color: #c9545d;
           color: #c9545d;
+      }
+
+      #custom-spotify {
+        font-size: 14;
+        font-weight: bold;
+        color: ${colours.green};
       }
 
       #clock {
