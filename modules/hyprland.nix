@@ -1,8 +1,4 @@
-{
-  pkgs,
-  rose-pine-hyprcursor,
-  ...
-}: {
+{pkgs, ...}: {
   # Enable hyprland
   programs.hyprland = {
     enable = true;
@@ -14,10 +10,6 @@
   environment.systemPackages = with pkgs; [
     # Enable clipboard sharing with neovim
     wl-clipboard
-
-    # cursor customisation
-    hyprcursor
-    rose-pine-hyprcursor.packages.${pkgs.system}.default
 
     # Enable monitor orientation in sddm
     # xorg.xrandr

@@ -45,7 +45,7 @@
         "custom/spotify" = {
           interval = 2;
           exec = ''
-            spotify_player get key playback | jq -r '"  \(.item.artists[0].name) - \(.item.name)"'
+            spotify_player get key playback | jq -r 'if .item then " \(.item.artists[0].name) - \(.item.name)" else empty end'
           '';
           on-click = "spotify_player playback play-pause";
         };

@@ -13,6 +13,7 @@
     ../../home/browser
     ../../home/feh.nix
     ../../home/spotify.nix
+    ../../home/cursor.nix
 
     nvf.homeManagerModules.default
   ];

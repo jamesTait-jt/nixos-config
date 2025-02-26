@@ -16,13 +16,6 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    # rose-pine-hyprcursor
-    rose-pine-hyprcursor = {
-      url = "github:ndom91/rose-pine-hyprcursor";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.hyprlang.follows = "hyprland/hyprlang";
-    };
-
     # nvf
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
@@ -32,7 +25,6 @@
     self,
     nixpkgs,
     home-manager,
-    rose-pine-hyprcursor,
     ...
   }: {
     nixosConfigurations = {
@@ -66,7 +58,7 @@
 
         monitors = import ./hosts/home-desktop/monitor-names.nix;
         colours = import ./themes/${theme}.nix;
-        specialArgs = {inherit username monitors colours rose-pine-hyprcursor;};
+        specialArgs = {inherit username monitors colours;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
