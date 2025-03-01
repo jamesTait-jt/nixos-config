@@ -12,6 +12,7 @@
     ../../modules/wifi.nix
     ../../modules/sound.nix
     ../../modules/bluetooth.nix
+    ../../modules/steam.nix
 
     ./hardware-configuration.nix
   ];

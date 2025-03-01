@@ -113,27 +113,27 @@
           }
 
           # QuickFix list navigation
-          {
-            key = "<C-k>";
-            mode = "n";
-            action = "<cmd>cnext<CR>zz";
-          }
-          {
-            key = "<C-j>";
-            mode = "n";
-            action = "<cmd>cprev<CR>zz";
-          }
-          {
-            key = "<leader>k";
-            mode = "n";
-            action = "<cmd>lnext<CR>zz";
-          }
-          {
-            key = "<leader>j";
-            mode = "n";
-            action = "<cmd>lprev<CR>zz";
-          }
-
+          # {
+          #   key = "<C-k>";
+          #   mode = "n";
+          #   action = "<cmd>cnext<CR>zz";
+          # }
+          # {
+          #   key = "<C-j>";
+          #   mode = "n";
+          #   action = "<cmd>cprev<CR>zz";
+          # }
+          # {
+          #   key = "<leader>k";
+          #   mode = "n";
+          #   action = "<cmd>lnext<CR>zz";
+          # }
+          # {
+          #   key = "<leader>j";
+          #   mode = "n";
+          #   action = "<cmd>lprev<CR>zz";
+          # }
+          #
           ####### PLUGINS ######
           {
             key = "<leader>pv";
