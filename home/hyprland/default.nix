@@ -95,7 +95,7 @@ in {
       };
 
       decoration = {
-        rounding = 5;
+        rounding = 0;
         blur = {
           enabled = true;
         };
@@ -119,6 +119,9 @@ in {
       workspace = 8, monitor:${right.name}
       workspace = 9, monitor:${right.name}
       workspace = 0, monitor:${right.name}
+
+      animation = workspaces, 0
+      animation = windows, 1, 1, default
     '';
   };
 }
