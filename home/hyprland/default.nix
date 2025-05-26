@@ -26,7 +26,7 @@ in {
     settings = {
       "$mod" = "ALT";
       "$terminal" = "alacritty";
-      "$browser" = "brave";
+      "$browser" = "zen";
       "$menu" = "wofi --show drun";
       "$screenshot" = "hyprshot -o /home/${username}/Photos/Screenshots";
 
@@ -122,6 +122,7 @@ in {
 
       animation = workspaces, 0
       animation = windows, 1, 1, default
+      animation = fade, 1, 1, default
     '';
   };
 }
