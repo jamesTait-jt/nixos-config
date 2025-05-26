@@ -4,7 +4,7 @@
       name = "HDMI-A-1";
       resolution = "3840x2160";
       rate = "60";
-      scale = "2";
+      scale = "1.5";
     };
     right = {
       name = "DVI-D-1";
@@ -19,7 +19,7 @@
       name = "HDMI-1";
       resolution = "3840x2160";
       rate = "60";
-      scale = "2";
+      scale = "1.5";
     };
     right = {
       name = "DVI-D-1";

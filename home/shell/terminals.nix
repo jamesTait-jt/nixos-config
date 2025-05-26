@@ -20,11 +20,11 @@
         bold.family = "JetBrains Mono Nerd Font";
         italic.family = "JetBrains Mono Nerd Font";
         bold_italic.family = "JetBrains Mono Nerd Font";
-        size = 11.0;
+        size = 13.0;
       };
 
       window = {
-        opacity = 0.90;
+        opacity = 1;
         decorations = "none";
         padding.x = 10;
         padding.y = 10;

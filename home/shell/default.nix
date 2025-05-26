@@ -7,7 +7,7 @@
 
   home.sessionVariables = {
     # Set default apps
-    EDITOR = "vim";
+    EDITOR = "nvim";
     TERMINAL = "alacritty";
   };
 }

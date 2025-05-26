@@ -109,7 +109,7 @@
         background: ${colours.bg0};
         color: ${colours.fg};
         font-family: "JetBrainsMono NF", "JetBrainsMono", "JetBrainsMono Nerd Font";
-        font-size: 13px;
+        font-size: 16px;
       }
 
       /* Each module */
