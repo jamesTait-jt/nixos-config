@@ -11,6 +11,7 @@ return {
 				python = { "isort", "ruff_format" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
+				nix = { "alejandra" },
 				-- markdown = { "prettier" },
 			},
 			format_on_save = {

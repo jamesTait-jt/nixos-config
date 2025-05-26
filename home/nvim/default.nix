@@ -10,15 +10,20 @@
     vimAlias = true;
 
     extraPackages = with pkgs; [
-      # LazyVim
+      # LSPs
       lua-language-server
+      vtsls
+      harper
+
+      # Formatter (example)
       stylua
-      # Telescope
+      alejandra
+
+      # Telescope dependencies
       ripgrep
+      fd
     ];
 
-    plugins = with pkgs.vimPlugins; [
-      lazy-nvim
-    ];
+    plugins = with pkgs.vimPlugins; [lazy-nvim];
   };
 }
