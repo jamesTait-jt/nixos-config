@@ -103,8 +103,8 @@ in {
     };
 
     extraConfig = ''
-      monitor = ${centre.name}, ${centre.resolution}@${centre.rate}, 0x0, 1
-      monitor = ${right.name}, ${right.resolution}, 1920x0, 1
+      monitor = ${centre.name}, ${centre.resolution}@${centre.rate}, 0x0, ${centre.scale}
+      monitor = ${right.name}, ${right.resolution}@${right.rate}, 3840x0, ${right.scale}
 
       # Centre monitor
       workspace = 1, monitor:${centre.name}

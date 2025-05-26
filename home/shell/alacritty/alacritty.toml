@@ -3,7 +3,7 @@ normal.family = "JetBrains Mono Nerd Font"
 bold.family = "JetBrains Mono Nerd Font"
 italic.family = "JetBrains Mono Nerd Font"
 bold_italic.family = "JetBrains Mono Nerd Font"
-size = 11.0
+size = 16.0
 
 [window]
 opacity = 0.90

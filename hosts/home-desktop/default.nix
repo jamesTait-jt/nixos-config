@@ -13,7 +13,8 @@
     ../../modules/sound.nix
     ../../modules/bluetooth.nix
     ../../modules/steam.nix
-    ../../modules/notion.nix
+    # ../../modules/notion.nix
+    # ../../modules/transmission.nix
 
     ./hardware-configuration.nix
   ];
