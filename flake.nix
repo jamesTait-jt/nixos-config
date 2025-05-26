@@ -55,7 +55,8 @@
               home-manager.useUserPackages = true;
 
               home-manager.extraSpecialArgs = inputs // specialArgs;
-              home-manager.users.${username} = import ./users/${username}/home.nix;
+              home-manager.users.${username} =
+                import ./users/${username}/home.nix;
             }
           ];
         };
@@ -67,9 +68,7 @@
 
         monitors = import ./hosts/home-desktop/monitor-names.nix;
         colours = import ./themes/${theme}.nix;
-        specialArgs = {
-          inherit username monitors colours;
-        };
+        specialArgs = {inherit username monitors colours;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
@@ -85,7 +84,8 @@
               home-manager.useUserPackages = true;
 
               home-manager.extraSpecialArgs = inputs // specialArgs;
-              home-manager.users.${username} = import ./users/${username}/home.nix;
+              home-manager.users.${username} =
+                import ./users/${username}/home.nix;
             }
           ];
         };
