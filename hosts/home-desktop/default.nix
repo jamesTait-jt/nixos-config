@@ -15,6 +15,7 @@
     ../../modules/steam.nix
     # ../../modules/notion.nix
     # ../../modules/transmission.nix
+    # ../../modules/minecraft.nix
 
     ./hardware-configuration.nix
   ];
