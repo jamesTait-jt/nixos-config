@@ -19,6 +19,15 @@
     # nvf
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
+
+    # zen browser
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 
   outputs = inputs @ {
@@ -58,7 +67,9 @@
 
         monitors = import ./hosts/home-desktop/monitor-names.nix;
         colours = import ./themes/${theme}.nix;
-        specialArgs = {inherit username monitors colours;};
+        specialArgs = {
+          inherit username monitors colours;
+        };
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;

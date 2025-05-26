@@ -1,6 +1,7 @@
 {
   pkgs,
   nvf,
+  zen-browser,
   ...
 }: {
   imports = [
@@ -16,6 +17,7 @@
     ../../home/cursor.nix
 
     nvf.homeManagerModules.default
+    zen-browser.homeModules.twilight-official
   ];
 
   programs.git = {
@@ -32,10 +34,10 @@
   };
 
   xdg.mimeApps.defaultApplications = {
-    "text/html" = "brave-browser.desktop";
-    "x-scheme-handler/http" = "brave-browser.desktop";
-    "x-scheme-handler/https" = "brave-browser.desktop";
-    "x-scheme-handler/about" = "brave-browser.desktop";
-    "x-scheme-handler/unknown" = "brave-browser.desktop";
+    "text/html" = "zen-browser.desktop";
+    "x-scheme-handler/http" = "zen-browser.desktop";
+    "x-scheme-handler/https" = "zen-browser.desktop";
+    "x-scheme-handler/about" = "zen-browser.desktop";
+    "x-scheme-handler/unknown" = "zen-browser.desktop";
   };
 }
