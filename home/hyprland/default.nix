@@ -31,7 +31,7 @@ in {
       "$screenshot" = "hyprshot -o /home/${username}/Photos/Screenshots";
 
       input = {
-        kb_layout = "gb";
+        kb_layout = "us";
         kb_options = "ctrl:swapcaps";
       };
 
