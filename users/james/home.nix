@@ -1,4 +1,9 @@
-{ pkgs, nvf, zen-browser, ... }: {
+{
+  pkgs,
+  nvf,
+  zen-browser,
+  ...
+}: {
   imports = [
     ../../home/core.nix
 
@@ -11,6 +16,7 @@
     ../../home/spotify.nix
     ../../home/cursor.nix
     ../../home/lazygit.nix
+    ../../home/minecraft.nix
 
     nvf.homeManagerModules.default
     zen-browser.homeModules.twilight-official
