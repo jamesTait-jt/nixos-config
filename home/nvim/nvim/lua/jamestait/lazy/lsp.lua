@@ -47,7 +47,7 @@ return {
 
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "vtsls", "csharp_ls@0.6.0", "harper_ls" },
+				-- ensure_installed = { "lua_ls", "vtsls", "csharp_ls@0.6.0", "harper_ls" },
 				handlers = {
 					function(server)
 						require("lspconfig")[server].setup({})

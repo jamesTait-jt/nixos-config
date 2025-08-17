@@ -17,6 +17,8 @@
     ../../home/cursor.nix
     ../../home/lazygit.nix
     ../../home/minecraft.nix
+    ../../home/rclone.nix
+    ../../home/discord.nix
 
     nvf.homeManagerModules.default
     zen-browser.homeModules.twilight-official
