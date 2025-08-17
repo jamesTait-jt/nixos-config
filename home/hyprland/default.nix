@@ -41,9 +41,10 @@ in {
         "$mod, space, exec, $menu"
 
         # Screenshots
-        ", PRINT, exec, $screenshot -m output"
-        "$mod, PRINT, exec, $screenshot -m window"
-        "$mod SHIFT, PRINT, exec, $screenshot -m region"
+        # ", PRINT, exec, $screenshot -m output"
+        # "$mod, PRINT, exec, $screenshot -m window"
+        # "$mod SHIFT, PRINT, exec, $screenshot -m region"
+        "$mod, s, exec, $screenshot -m region"
 
         # Volume controls
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
