@@ -19,6 +19,7 @@
     ../../home/minecraft.nix
     ../../home/rclone.nix
     ../../home/discord.nix
+    ../../home/gimp.nix
 
     nvf.homeManagerModules.default
     zen-browser.homeModules.twilight-official
