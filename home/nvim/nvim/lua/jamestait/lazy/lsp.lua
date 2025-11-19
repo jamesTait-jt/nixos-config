@@ -1,5 +1,8 @@
 return {
 	{
+		"Hoffs/omnisharp-extended-lsp.nvim",
+	},
+	{
 		"williamboman/mason.nvim",
 		build = ":MasonUpdate",
 		config = true,
@@ -26,7 +29,8 @@ return {
 			lspconfig["vtsls"].setup({ capabilities = capabilities })
 
 			-- c#
-			lspconfig["csharp_ls"].setup({ capabilities = capabilities })
+			-- lspconfig["csharp_ls"].setup({ capabilities = capabilities })
+			lspconfig["omnisharp"].setup({ capabilities = capabilities })
 
 			-- Markdown
 			lspconfig["harper_ls"].setup({
@@ -36,6 +40,18 @@ return {
 					userDictPath = "~/.config/dict.txt",
 				},
 			})
+
+			-- SQL
+			-- lspconfig["sqlls"].setup({ capabilities = capabilities })
+
+			-- bash
+			lspconfig["bashls"].setup({ capabilities = capabilities })
+
+			-- Go
+			lspconfig["gopls"].setup({ capabilities = capabilities })
+
+			-- Rust
+			lspconfig["rust_analyzer"].setup({ capabilities = capabilities })
 		end,
 	},
 	{
@@ -47,7 +63,15 @@ return {
 
 		config = function()
 			require("mason-lspconfig").setup({
-				-- ensure_installed = { "lua_ls", "vtsls", "csharp_ls@0.6.0", "harper_ls" },
+				ensure_installed = {
+					"lua_ls",
+					"vtsls",
+					"omnisharp",
+					"harper_ls",
+					"bashls",
+					"gopls",
+					"rust_analyzer",
+				},
 				handlers = {
 					function(server)
 						require("lspconfig")[server].setup({})

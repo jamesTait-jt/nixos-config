@@ -17,7 +17,12 @@ return {
 		},
 		input = { enabled = true },
 		lazygit = { enabled = true },
-		picker = { enabled = true },
+		picker = {
+			sources = {
+				explorer = { hidden = true },
+				files = { hidden = true },
+			},
+		},
 		notifier = {
 			enabled = true,
 			timeout = 3000,
@@ -386,6 +391,39 @@ return {
 			nowait = true,
 			desc = "References",
 		},
+
+		-- {
+		-- 	"gd",
+		-- 	function()
+		-- 		require("omnisharp_extended").lsp_definition(function(locations)
+		-- 			Snacks.picker.show_locations(locations, { prompt = "OmniSharp Definitions" })
+		-- 			Snacks.picker.qflist()
+		-- 		end)
+		-- 	end,
+		-- 	desc = "Goto Definition (OmniSharp with Snacks)",
+		-- },
+		-- {
+		-- 	"gD",
+		-- 	function()
+		-- 		require("omnisharp_extended").lsp_declarations(function(locations)
+		-- 			Snacks.picker.show_locations(locations, { prompt = "OmniSharp Declarations" })
+		-- 			Snacks.picker.qflist()
+		-- 		end)
+		-- 	end,
+		-- 	desc = "Goto Declaration (OmniSharp with Snacks)",
+		-- },
+		-- {
+		-- 	"gr",
+		-- 	function()
+		-- 		require("omnisharp_extended").lsp_references(function(locations)
+		-- 			Snacks.picker.show_locations(locations, { prompt = "OmniSharp References" })
+		-- 			Snacks.picker.qflist()
+		-- 		end)
+		-- 	end,
+		-- 	nowait = true,
+		-- 	desc = "References (OmniSharp with Snacks)",
+		-- },
+
 		{
 			"gI",
 			function()

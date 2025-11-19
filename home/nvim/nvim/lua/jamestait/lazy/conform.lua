@@ -13,6 +13,10 @@ return {
 				typescript = { "prettier" },
 				nix = { "alejandra" },
 				-- markdown = { "prettier" },
+				sql = { "sqlfmt" },
+				bash = { "beautysh" },
+				go = { "gofmt" },
+				rust = { "rustfmt" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
