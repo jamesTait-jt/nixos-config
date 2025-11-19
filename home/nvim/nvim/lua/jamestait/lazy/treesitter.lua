@@ -20,6 +20,7 @@ return {
 				"typescript",
 				"tsx",
 				"c_sharp",
+				"rust",
 
 				-- Markup & configuration
 				"yaml",
