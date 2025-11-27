@@ -7,6 +7,13 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		"folke/snacks.nvim",
 		"nvim-neotest/neotest-jest", -- JavaScript/TypeScript
+		{
+			"fredrikaverpil/neotest-golang",
+			version = "*", -- Optional, but recommended; track releases
+			build = function()
+				vim.system({ "go", "install", "gotest.tools/gotestsum@latest" }):wait() -- Optional, but recommended
+			end,
+		},
 	},
 	config = function()
 		require("neotest").setup({
@@ -16,6 +23,7 @@ return {
 					jestConfigFile = "jest.config.ts",
 					jest_test_discovery = true,
 				}),
+				require("neotest-golang")({ runner = "gotestsum" }),
 			},
 		})
 	end,
@@ -23,39 +31,74 @@ return {
 	cmd = { "NeotestRun", "NeotestSummary" },
 	keys = {
 		{
-			"<leader>tt",
+			"<leader>ta",
 			function()
-				require("neotest").run.run({
-					command = vim.fn.expand("%"),
-					jestCommand = "npx jest",
-				})
+				require("neotest").run.attach()
 			end,
-			desc = "Neotest: Run unit test suite",
+			desc = "Neotest: Attach to Test",
 		},
 		{
-			"<leader>tT",
+			"<leader>tl",
 			function()
-				require("neotest").run.run({
-					command = vim.fn.expand("%"),
-					jestCommand = "npx dotenv -e .env.test.local npx jest",
-					jestConfigFile = "jest.e2e.config.ts",
-				})
+				require("neotest").run.run_last()
 			end,
-			desc = "Neotest: Run local E2E test suite",
+			desc = "Neotest: Run Last",
 		},
 		{
 			"<leader>to",
 			function()
-				require("neotest").output.open()
+				require("neotest").output.open({ enter = true })
 			end,
-			desc = "Neotest: Open output panel",
+			desc = "Neotest: Show Output",
+		},
+		{
+			"<leader>tO",
+			function()
+				require("neotest").output_panel.toggle()
+			end,
+			desc = "Neotest: Toggle Output Panel",
+		},
+		{
+			"<leader>tr",
+			function()
+				require("neotest").run.run()
+			end,
+			desc = "Neotest: Run Nearest",
+		},
+		{
+			"<leader>ts",
+			function()
+				require("neotest").summary.toggle()
+			end,
+			desc = "Neotest: Toggle Summary",
 		},
 		{
 			"<leader>tS",
 			function()
-				require("neotest").summary.toggle()
+				require("neotest").run.stop()
 			end,
-			desc = "Neotest: Toggle test summary",
+			desc = "Neotest: Stop Running Tests",
+		},
+		{
+			"<leader>tt",
+			function()
+				require("neotest").run.run(vim.fn.expand("%"))
+			end,
+			desc = "Neotest: Run File",
+		},
+		{
+			"<leader>tT",
+			function()
+				require("neotest").run.run(vim.loop.cwd())
+			end,
+			desc = "Neotest: Run All Test Files",
+		},
+		{
+			"<leader>tw",
+			function()
+				require("neotest").watch.toggle(vim.fn.expand("%"))
+			end,
+			desc = "Neotest: Toggle Watch",
 		},
 	},
 }

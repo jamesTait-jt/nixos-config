@@ -12,7 +12,7 @@ return {
 				javascript = { "prettier" },
 				typescript = { "prettier" },
 				nix = { "alejandra" },
-				-- markdown = { "prettier" },
+				markdown = { "prettier" },
 				sql = { "sqlfmt" },
 				bash = { "beautysh" },
 				go = { "gofmt" },
