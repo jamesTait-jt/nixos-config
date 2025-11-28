@@ -35,3 +35,8 @@ blue    = "#7fbbb3"
 magenta = "#d699b6"
 cyan    = "#83c092"
 white   = "#d3c6aa"
+
+[keyboard]
+bindings = [
+  { key = "Space", mods = "Control", chars = "\u0000" }
+]
