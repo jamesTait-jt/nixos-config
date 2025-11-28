@@ -6,6 +6,7 @@ return {
 		"antoinemadec/FixCursorHold.nvim",
 		"nvim-treesitter/nvim-treesitter",
 		"folke/snacks.nvim",
+		"andythigpen/nvim-coverage",
 		"nvim-neotest/neotest-jest", -- JavaScript/TypeScript
 		{
 			"fredrikaverpil/neotest-golang",
@@ -15,20 +16,43 @@ return {
 			end,
 		},
 	},
+	opts = {
+		discovery = {
+			enabled = false,
+			concurrent = 1,
+		},
+		running = {
+			concurrent = true,
+		},
+		summary = {
+			animated = true,
+		},
+	},
 	config = function()
-		require("neotest").setup({
+		local neotest = require("neotest")
+
+		neotest.setup({
 			adapters = {
 				require("neotest-jest")({
 					jestCommand = "npx jest",
 					jestConfigFile = "jest.config.ts",
 					jest_test_discovery = true,
 				}),
-				require("neotest-golang")({ runner = "gotestsum" }),
+				require("neotest-golang")({
+					runner = "go",
+					go_test_args = {
+						"-v",
+						"-race",
+						"-count=1",
+						"-coverprofile=" .. vim.fn.getcwd() .. "/coverage.out", -- write coverage profile
+					},
+				}),
 			},
 		})
 	end,
 
 	cmd = { "NeotestRun", "NeotestSummary" },
+
 	keys = {
 		{
 			"<leader>ta",
