@@ -11,6 +11,7 @@ return {
 				python = { "isort", "ruff_format" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
+				typescriptreact = { "prettier" },
 				nix = { "alejandra" },
 				markdown = { "prettier" },
 				sql = { "sqlfmt" },
