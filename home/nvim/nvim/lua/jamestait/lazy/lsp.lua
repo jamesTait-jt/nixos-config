@@ -11,47 +11,57 @@ return {
 		"neovim/nvim-lspconfig",
 		dependencies = { "saghen/blink.cmp" },
 
-		-- example using `opts` for defining servers
-		opts = {
-			servers = {
-				lua_ls = {},
-			},
-		},
-		-- example calling setup directly for each LSP
 		config = function()
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
-			local lspconfig = require("lspconfig")
 
 			-- lua
-			lspconfig["lua_ls"].setup({ capabilities = capabilities })
+			vim.lsp.config.lua_ls = {
+				capabilities = capabilities,
+			}
 
 			-- typescript / javascript
-			lspconfig["vtsls"].setup({ capabilities = capabilities })
+			vim.lsp.config.vtsls = {
+				capabilities = capabilities,
+			}
 
 			-- c#
-			-- lspconfig["csharp_ls"].setup({ capabilities = capabilities })
-			lspconfig["omnisharp"].setup({ capabilities = capabilities })
+			vim.lsp.config.omnisharp = {
+				capabilities = capabilities,
+			}
 
 			-- Markdown
-			lspconfig["harper_ls"].setup({
+			vim.lsp.config.harper_ls = {
 				capabilities = capabilities,
 				filetypes = { "markdown" },
 				settings = {
 					userDictPath = "~/.config/dict.txt",
 				},
-			})
-
-			-- SQL
-			-- lspconfig["sqlls"].setup({ capabilities = capabilities })
+			}
 
 			-- bash
-			lspconfig["bashls"].setup({ capabilities = capabilities })
+			vim.lsp.config.bashls = {
+				capabilities = capabilities,
+			}
 
 			-- Go
-			lspconfig["gopls"].setup({ capabilities = capabilities })
+			vim.lsp.config.gopls = {
+				capabilities = capabilities,
+			}
 
 			-- Rust
-			lspconfig["rust_analyzer"].setup({ capabilities = capabilities })
+			vim.lsp.config.rust_analyzer = {
+				capabilities = capabilities,
+			}
+
+			vim.lsp.enable({
+				"lua_ls",
+				"vtsls",
+				"omnisharp",
+				"harper_ls",
+				"bashls",
+				"gopls",
+				"rust_analyzer",
+			})
 		end,
 	},
 	{
@@ -60,24 +70,16 @@ return {
 			"williamboman/mason.nvim",
 			"neovim/nvim-lspconfig",
 		},
-
-		config = function()
-			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"lua_ls",
-					"vtsls",
-					"omnisharp",
-					"harper_ls",
-					"bashls",
-					"gopls",
-					"rust_analyzer",
-				},
-				handlers = {
-					function(server)
-						require("lspconfig")[server].setup({})
-					end,
-				},
-			})
-		end,
+		opts = {
+			ensure_installed = {
+				"lua_ls",
+				"vtsls",
+				"omnisharp",
+				"harper_ls",
+				"bashls",
+				"gopls",
+				"rust_analyzer",
+			},
+		},
 	},
 }
