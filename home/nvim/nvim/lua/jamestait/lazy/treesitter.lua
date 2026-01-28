@@ -29,12 +29,15 @@ return {
 			"markdown",
 			"markdown_inline",
 			"xml",
+			"html",
+			"gotmpl",
 
 			-- Infrastructure
 			"gitignore",
 			"dockerfile",
 			"terraform",
 			"make",
+			"helm",
 
 			-- Query languages
 			"query",
@@ -45,6 +48,19 @@ return {
 		},
 	},
 	config = function(_, opts)
+		-- gotmpl filetype detection
+		vim.filetype.add({
+			extension = {
+				gotmpl = "gotmpl",
+				gotpl = "gotmpl",
+			},
+			pattern = {
+				[".*/templates/.*%.tpl"] = "helm",
+				[".*/templates/.*%.ya?ml"] = "helm",
+				["helmfile.*%.ya?ml"] = "helm",
+			},
+		})
+
 		-- install parsers from custom opts.ensure_installed
 		if opts.ensure_installed and #opts.ensure_installed > 0 then
 			require("nvim-treesitter").install(opts.ensure_installed)

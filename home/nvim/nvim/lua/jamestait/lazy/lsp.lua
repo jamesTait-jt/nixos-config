@@ -46,6 +46,11 @@ return {
 			-- Go
 			vim.lsp.config.gopls = {
 				capabilities = capabilities,
+				settings = {
+					gopls = {
+						buildFlags = { "-tags=integration" },
+					},
+				},
 			}
 
 			-- Rust
