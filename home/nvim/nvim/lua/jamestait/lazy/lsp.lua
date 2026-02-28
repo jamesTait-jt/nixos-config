@@ -75,7 +75,7 @@ return {
 			"williamboman/mason.nvim",
 			"neovim/nvim-lspconfig",
 		},
-		opts = {
+		opts = vim.fn.filereadable("/etc/NIXOS") == 1 and {} or {
 			ensure_installed = {
 				"lua_ls",
 				"vtsls",

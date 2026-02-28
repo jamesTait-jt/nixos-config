@@ -36,11 +36,12 @@
       # Normal fonts
       noto-fonts
       noto-fonts-cjk-sans
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       roboto
 
       # Nerdfonts
-      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
     ];
 
     # Use user-specified fonts rather than default

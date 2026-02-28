@@ -6,7 +6,7 @@
   imports = [
     ../../modules/system.nix
     ../../modules/nvidia.nix
-    ../../modules/corsair.nix
+    # ../../modules/corsair.nix
     #../../modules/i3.nix
     ../../modules/hyprland.nix
     ../../modules/wifi.nix

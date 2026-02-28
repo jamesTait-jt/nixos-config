@@ -3,7 +3,10 @@
   lib,
   ...
 }: {
-  home.file.".config/nvim".source = ./nvim;
+  home.file.".config/nvim" = {
+    source = ./nvim;
+    recursive = true;
+  };
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -14,6 +17,9 @@
       lua-language-server
       vtsls
       harper
+      gopls
+      omnisharp-roslyn
+      nodePackages.bash-language-server
 
       # Formatter (example)
       stylua
