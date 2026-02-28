@@ -12,6 +12,7 @@
     ../../home/hyprland
     ../../home/shell
     ../../home/browser
+    ../../home/claude
     ../../home/feh.nix
     ../../home/spotify.nix
     ../../home/cursor.nix

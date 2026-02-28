@@ -1,0 +1,18 @@
+# Claude project config
+.claude/
+
+# Claude runtime
+home/claude/claude/**
+
+!home/claude/claude/CLAUDE.md
+!home/claude/claude/settings.json
+!home/claude/claude/agents/
+!home/claude/claude/agents/**
+!home/claude/claude/commands/
+!home/claude/claude/commands/**
+!home/claude/claude/hooks/
+!home/claude/claude/hooks/**
+!home/claude/claude/skills/
+!home/claude/claude/skills/**
+
+**/node_modules/
