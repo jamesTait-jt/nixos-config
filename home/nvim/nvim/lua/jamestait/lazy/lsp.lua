@@ -58,6 +58,11 @@ return {
 				capabilities = capabilities,
 			}
 
+			-- Python
+			vim.lsp.config.basedpyright = {
+				capabilities = capabilities,
+			}
+
 			vim.lsp.enable({
 				"lua_ls",
 				"vtsls",
@@ -66,6 +71,7 @@ return {
 				"bashls",
 				"gopls",
 				"rust_analyzer",
+				"basedpyright",
 			})
 		end,
 	},
@@ -84,6 +90,7 @@ return {
 				"bashls",
 				"gopls",
 				"rust_analyzer",
+				"basedpyright",
 			},
 		},
 	},
